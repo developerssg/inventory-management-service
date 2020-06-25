@@ -26,7 +26,7 @@ public class OrdersController {
                         HttpMethod.GET, null, new ParameterizedTypeReference<List<Order>>() {
                         });
         List<Order> orders = orderResp.getBody();
-        return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
+        return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")
@@ -36,7 +36,7 @@ public class OrdersController {
                 HttpMethod.GET, null, new ParameterizedTypeReference<List<Order>>() {
                 });
         List<Order> orders = orderResp.getBody();
-        return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
+        return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 
     @RequestMapping("/hello")
